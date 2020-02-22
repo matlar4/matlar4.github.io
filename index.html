@@ -1,51 +1,79 @@
-  <html>
+<!-- HTML for your visualization goes here -->
+<!doctype html>
+<html>
   <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['SKILLS', 'Hannah Abbott', 'Ludo Bagman', 'Bathilda Bagshot', 'Katie Bell', 'Cuthbert Binns', 'Phineas Nigellus Black', 'Sirius Black', 'Amelia Bones ', 'Susan Bones ', 'Terry Boot', 'Lavender Brown', 'Millicent Bulstrode', 'Charity Burbage', 'Frank Bryce', 'Alecto Carrow', 'Amycus Carrow', 'Reginald Cattermole', 'Mary Cattermole ', 'Cho Chang ', 'Penelope Clearwater ', 'Michael Corner', 'Vincent Crabbe', 'Colin Creevey', 'Fleur Delacour ', 'Amos Diggory', 'Albus Dumbledore', 'Seamus Finnigan', 'Marcus Flint', 'Filius Flitwick ', 'Cornelius Fudge', 'Gellert Grindelwald ', 'Godric Gryffindor ', 'Rubeus Hagrid ', 'Rolanda Hooch ', 'Helga Hufflepuff', 'Hermione Granger', 'Igor Karkaroff ', 'Viktor Krum', 'Silvanus Kettleburn ', 'Bellatrix Lestrange', 'Neville Longbottom', 'Xenophilius Lovegood ', 'Remus Lupin', 'Draco Malfoy', 'Ernie Macmillan', 'Minerva McGonagall', 'Cormac McLaggen', 'Graham Montague', 'Theodore Nott', 'Garrick Ollivander ', 'Pansy Parkinson', 'Peter Pettigrew ', 'Antioch Peverell', 'Irma Pince', 'Sturgis Podmore ', 'Poppy Pomfrey ', 'Harry Potter', 'James Potter ', 'Lily Potter', 'Quirinus Quirrell', 'Helena Ravenclaw', 'Rowena Ravenclaw', 'Tom Marvolo Riddle', 'Demelza Robins '],
-          ['Infovis',4,4,3,8,6,3,2,5,3,1,2,3,5,2,4,5,2,2,4,2,2,3,4,2,6,5,3,2,5,1,3,2,6,5,4,2,1,6,4,5,3,4,3,8,3,7,2,3,4,1,8,4,1,4,2,5,4,4,4,6,7,6,3,3],
-          ['Statistics',3,8,2,3,5,5,3,3,4,3,2,1,3,2,5,1,4,2,2,4,6,3,7,7,5,8,3,2,7,8,2,3,7,4,5,5,2,4,3,5,4,3,1,3,4,3,5,4,5,4,8,5,3,8,2,4,3,8,6,2,7,3,3,6],
-          ['Math',3,6,3,6,6,6,5,7,4,5,4,6,4,4,8,5,5,4,5,2,5,7,7,7,6,8,7,5,7,4,4,5,6,5,6,5,5,5,4,7,5,7,4,5,1,4,3,6,5,6,7,6,3,5,3,5,7,3,5,7,8,4,5,6],
-          ['Art',4,4,4,6,4,1,4,2,5,7,5,5,8,1,4,9,7,1,1,4,7,3,6,9,1,1,3,8,6,3,8,6,6,5,3,1,6,6,5,6,5,5,6,5,1,8,3,8,8,3,7,2,5,10,3,3,2,8,6,8,8,5,5,4],
-          ['Computer',10,7,8,8,9,7,7,9,9,9,5,5,8,5,9,9,10,6,7,5,4,7,7,9,7,7,8,6,8,8,7,10,6,6,7,7,8,6,5,8,6,8,9,8,10,8,3,8,8,8,9,6,4,9,4,7,8,5,6,9,7,8,8,10],
-          ['Programming',4,6,6,10,8,7,4,4,6,6,5,2,7,5,7,5,7,5,5,5,1,3,5,8,7,5,7,4,8,7,3,5,7,6,6,4,6,7,4,2,5,8,6,7,10,6,2,2,6,5,8,3,1,3,1,7,2,1,3,7,5,6,5,7],
-					['Graphics',6,4,1,5,8,1,1,1,3,1,1,4,1,1,5,5,6,1,5,2,1,1,2,4,8,1,2,1,5,3,1,3,4,2,2,2,1,4,2,2,5,2,4,5,2,4,1,1,4,1,8,3,1,1,1,3,3,3,4,7,5,2,2,5],
-					['HCI',4,4,4,5,6,3,2,3,5,4,3,3,4,3,4,5,6,4,5,2,2,3,2,9,7,5,4,3,7,1,3,2,4,4,6,5,1,4,2,3,5,4,8,6,1,7,1,3,4,2,6,3,1,3,2,4,3,4,4,7,6,6,3,5],
-					['UX',3,1,3,4,4,4,3,4,4,3,2,4,4,3,3,5,8,2,3,4,8,1,3,8,9,7,2,2,7,1,3,7,2,6,5,8,4,6,5,4,4,5,7,6,8,8,7,7,3,7,6,8,6,7,3,4,3,8,7,3,6,6,5,5],
-					['Communication',6,10,6,4,7,7,5,9,7,7,7,6,7,8,9,10,10,10,8,8,10,7,9,9,9,9,8,10,9,4,3,7,4,10,8,7,9,7,10,7,7,9,3,10,5,9,7,9,6,9,8,10,8,6,7,8,3,7,8,7,7,7,10,8],
-					['Collaboration',10,5,10,4,7,8,5,7,8,8,8,4,8,8,4,10,10,7,8,5,9,10,9,9,6,8,7,6,9,5,4,3,4,8,8,9,10,6,6,8,7,7,6,8,8,9,8,10,7,9,9,8,7,8,7,8,8,7,9,7,5,3,10,9],
-					['Repository',6,9,5,8,8,2,3,7,5,8,3,1,8,2,7,5,5,9,6,3,7,6,2,9,7,8,6,6,9,7,5,2,3,9,7,5,6,7,6,7,3,5,5,8,9,9,4,3,9,7,6,4,3,1,2,3,2,2,2,6,5,5,5,8]
-
-        ]);
-
-        var options = {
-          title: 'Forming Groups',
-          focusTarget: 'category',
-          legend: {position: 'right'},
-          explorer:{
-          actions: ['dragToZoom', 'rightClickToReset'],
-          axis:'vertical',
-          keepInBounds:true,
-          },
-          hAxis:{title: "SKILLS", titleTextStyle: {bold:true}},
-          vAxis:{title: "SCORE", titleTextStyle: {bold:true}}
-
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-        
-
-    }
-    </script>
+    <!-- Loads our css styles. Change the href if you change the name of that file! -->
+    <link rel="stylesheet" type="text/css" href="my_style.css">
+    <h4>Mattias Larsson - IVIS Project 2</h4>
   </head>
   <body>
-    <div id="curve_chart" style="width: 1920px; height: 1080px"></div>
+    <div id="chart"> <!-- This is the div that we put the SVG in -->
+    </div>
+
+    <!-- This line loads D3, our graphing library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js"></script>
+
+    <script src="my_script.js"></script>
+
+    <!-- Now we include the file that has our actual visualization code -->
+    <!-- If you change the name of my_script.js, be sure to change it here too! -->
+    <div class="buttons">
+      <select id="selectButton"></select>
+      <select id="waveButton"></select>
+    </div>
+
+    <div id="underChart">
+      <div class="left">
+        <h1>INFORMATION</h1>
+        <p>Try to change the variables to see how they differ over time</p>
+        <p>Values are normalized between 0-1</p>
+        <h3>Abbreviations info:</h3>
+        <ul>
+          <li>Happiness</li>
+          <li>PerHea = Perceived Health</li>
+          <li>FinSat = Financial Satisfaction</li>
+          <li>PerFai = Percieved Fairness</li>
+          <li>CWI = Cool Water Condition</li>
+          <li>PerSti = Perceived Stimulation</li>
+          <li>EV_voice = Voice Component of Emancipative Values</li>
+          <li>PerDem = Perceived Democraticness</li>
+        </ul>
+      </div>
+      <div class="mid">
+        <h1>Discovery process 1 - Health trends</h1>
+
+        <ul>
+          <li class="story">Observing the percieved health over the years, we notice some interesting patterns</li>
+          <li class="story"><b>PerHea + 1989-1993</b> - We start at a value 0,6 (or 60%)</li>
+          <li class="story"><b>PerHea + 1994-1999</b> - Stepping through the years, we see a rising trend. Are people getting healthier?</li>
+          <li class="story"><b>PerHea + 1999-2004</b> - Interestingly, there is a lot of missing in this wave. Did Y2K wipe out some data?</li>
+          <li class="story"><b>PerHea + 2005-2007</b> - Back on track! Numbers are still rising...</li>
+          <li class="story"><b>PerHea + 2010-2014</b> - Interesting! Comparing to the the previous wave, many people perceived happiness declines. Why is that?</li>
+        </ul>
+        <p>NOTE: I am aware correlation does not imply causation. My observations should not be considered as fact</p>
+      </div>
+      <div class="right">
+        <h1>Discovery process 2 - What causes happiness?</h1>
+
+
+        <ul>
+          <li class="story">Can money buy happiness? Let's investigate...</li>
+          <li class="story"><b>FinSat + 1999-2004</b> - We see here that Japan, Mexico, Nigeria and U.S.A had the population with the highest financial satisfaction</li>
+          <li class="story"><b>Happiness + 1999-2004</b> - Switching over to 'Happiness', we see that the same countries are topping the charts </li>
+          <li class="story"><b>Happiness + 1989-1993</b> - Going back to the 80's we see that Bulgaria was the least happy country</li>
+          <li class="story"><b>FinSat + 1989-1993</b> - Furthermore, we see that the Bulgarian population had the lowest financial satisfaction, further proof that money=happiness</li>
+        </ul>
+        <p>NOTE: I am aware correlation does not imply causation. My observations should not be considered as fact</p>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+
   </body>
 </html>
