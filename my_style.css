@@ -30,8 +30,16 @@ svg { /* This makes the SVG's background gray, good for debugging */
 	border-style: solid;
 	padding:10px;
 }
+.bottom{
+	margin-top:  40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	border-style: solid;
+	padding: 10px;
+	text-align: center;
+}
 .story{
-	align-items: center;
+	vertical-align: center;
 	color:black;
 	background-color: white;
 	margin-top: 10px;
