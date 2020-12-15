@@ -20,10 +20,9 @@
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
-    <script src="css/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/WebBuildTest.json", {onProgress: UnityProgress});
+        UnityLoader.instantiate("unityContainer", "Build/WebBuildTest.json");
     </script>
 
 </head>
@@ -175,9 +174,8 @@
                 <div class="col-lg-12">
                     <div class="section-title">GAME DEMO</div>
                     <h2>You can try out the game right here!</h2>
-                    <div class="webgl-content">
-                        <div id="unityContainer" style="width: 960px; height: 600px,"></div>
-                    </div>
+                    <div id="unityContainer" style="width: 960px; height: 600px; margin: auto"></div>
+
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             
