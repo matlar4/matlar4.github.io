@@ -96,6 +96,15 @@ h1 {
 	font: 700 2.5rem/3rem "Montserrat", sans-serif;
 }
 
+
+.gamePlayerContainer {
+width: 80%;
+margin: 0 auto;
+padding: 20px;
+}
+
+
+
 h2 {
 	color: #484a46;
 	font: 700 1.75rem/2.125rem "Montserrat", sans-serif;
