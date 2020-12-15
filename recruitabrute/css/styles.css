@@ -79,7 +79,7 @@ body, p {
 }
 
 .webgl-content * {border: 0; margin: auto; padding: 0;}
-.webgl-content {position: relative; margin: auto; top: 50%; left: 50%;}
+.webgl-content {position: absolute; margin: auto; top: 50%; left: 50%;}
 
 .webgl-content .logo, .progress {position: absolute; left: 50%; top: 50%;}
 .webgl-content .logo {background: url('progressLogo.Light.png') no-repeat center / contain; width: 154px; height: 130px;}
